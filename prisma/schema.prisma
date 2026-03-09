@@ -29,10 +29,9 @@ model User {
   updatedAt                   DateTime @updatedAt
 }
 
-model UserRole {
-  id String @id @default(uuid())
-  name String @unique
-  users User[]
+enum UserRole {
+  USER
+  ADMIN
 }
 
 model Post {
@@ -58,4 +57,16 @@ model Tag {
   id String @id @default(uuid())
   name String @unique
   posts Post[]
+}
+
+enum SubscriptionTier {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+enum SubscriptionStatus {
+  INACTIVE
+  ACTIVE
+  CANCELED
 }

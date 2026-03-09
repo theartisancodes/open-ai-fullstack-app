@@ -1,5 +1,6 @@
 const optionalServerEnv = {
-  EXTERNAL_API_BASE_URL: process.env.EXTERNAL_API_BASE_URL ?? "https://jsonplaceholder.typicode.com",
+  EXTERNAL_API_BASE_URL:
+    process.env.EXTERNAL_API_BASE_URL ?? "https://jsonplaceholder.typicode.com",
   OPENAI_MODEL: process.env.OPENAI_MODEL ?? "gpt-4.1-mini",
 };
 

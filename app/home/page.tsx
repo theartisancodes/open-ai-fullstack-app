@@ -5,9 +5,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-zinc-50 px-6 py-16">
       <div className="mx-auto max-w-3xl rounded-xl bg-white p-8 shadow-sm">
         <h1 className="text-3xl font-bold text-zinc-900">Home</h1>
-        <p className="mt-3 text-zinc-600">
-          This is the Home page for your fullstack app.
-        </p>
+        <p className="mt-3 text-zinc-600">This is the Home page for your fullstack app.</p>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

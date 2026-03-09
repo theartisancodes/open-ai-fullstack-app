@@ -11,25 +11,25 @@ This Next.js app is structured to consume:
 The following updates were added to the project:
 
 - New App Router pages:
-	- `app/home/page.tsx`
-	- `app/dashboard/page.tsx`
-	- `app/auth/page.tsx`
+  - `app/home/page.tsx`
+  - `app/dashboard/page.tsx`
+  - `app/auth/page.tsx`
 - Root landing page updated in `app/page.tsx` to navigate to new pages.
 - New service-layer modules for integration concerns:
-	- `lib/api/fetch-json.ts`
-	- `lib/db/client.ts`
-	- `lib/openai/client.ts`
-	- `lib/env.ts`
+  - `lib/api/fetch-json.ts`
+  - `lib/db/client.ts`
+  - `lib/openai/client.ts`
+  - `lib/env.ts`
 - New API routes for health checks and integrations:
-	- `app/api/health/route.ts`
-	- `app/api/external/route.ts`
-	- `app/api/db/route.ts`
-	- `app/api/openai/route.ts`
+  - `app/api/health/route.ts`
+  - `app/api/external/route.ts`
+  - `app/api/db/route.ts`
+  - `app/api/openai/route.ts`
 - Added environment template: `.env.example`
 - Added dependencies for integrations:
-	- `openai`
-	- `pg`
-	- `@types/pg`
+  - `openai`
+  - `pg`
+  - `@types/pg`
 
 ## Directory Setup
 
@@ -80,31 +80,31 @@ yarn dev
 ## API Endpoints
 
 - `GET /api/health`
-	- Purpose: health check for app runtime.
-	- Response:
-		- `200` `{ "ok": true, "service": "open-ai-fullstack-app", "timestamp": "..." }`
+  - Purpose: health check for app runtime.
+  - Response:
+    - `200` `{ "ok": true, "service": "open-ai-fullstack-app", "timestamp": "..." }`
 
 - `GET /api/db`
-	- Purpose: verify PostgreSQL connectivity using `select now()::text as now`.
-	- Response:
-		- `200` `{ "ok": true, "source": "database", "now": "..." }`
-		- `500` `{ "ok": false, "source": "database", "error": "..." }`
+  - Purpose: verify PostgreSQL connectivity using `select now()::text as now`.
+  - Response:
+    - `200` `{ "ok": true, "source": "database", "now": "..." }`
+    - `500` `{ "ok": false, "source": "database", "error": "..." }`
 
 - `GET /api/external`
-	- Purpose: fetch sample data from `EXTERNAL_API_BASE_URL` using `/todos/1`.
-	- Response:
-		- `200` `{ "ok": true, "source": "external-api", "data": { ... } }`
-		- `500` `{ "ok": false, "source": "external-api", "error": "..." }`
+  - Purpose: fetch sample data from `EXTERNAL_API_BASE_URL` using `/todos/1`.
+  - Response:
+    - `200` `{ "ok": true, "source": "external-api", "data": { ... } }`
+    - `500` `{ "ok": false, "source": "external-api", "error": "..." }`
 
 - `POST /api/openai`
-	- Purpose: create a response from OpenAI.
-	- Request body:
-		- `prompt` (required, string)
-		- `model` (optional, string; defaults to `OPENAI_MODEL` or `gpt-4.1-mini`)
-	- Response:
-		- `200` `{ "ok": true, "source": "openai", "output": "...", "responseId": "..." }`
-		- `400` `{ "ok": false, "error": "prompt is required" }`
-		- `500` `{ "ok": false, "source": "openai", "error": "..." }`
+  - Purpose: create a response from OpenAI.
+  - Request body:
+    - `prompt` (required, string)
+    - `model` (optional, string; defaults to `OPENAI_MODEL` or `gpt-4.1-mini`)
+  - Response:
+    - `200` `{ "ok": true, "source": "openai", "output": "...", "responseId": "..." }`
+    - `400` `{ "ok": false, "error": "prompt is required" }`
+    - `500` `{ "ok": false, "source": "openai", "error": "..." }`
 
 Example request:
 
