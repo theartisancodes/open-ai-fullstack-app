@@ -24,9 +24,9 @@ export default function Home() {
           </Link>
           <Link
             href="/auth"
-            className="rounded-md border border-zinc-500 px-4 py-3 text-center text-sm font-semibold"
+            className="rounded-md border border-zinc-500 px-4 py-3 text-center text-sm font-semibold hover:bg-zinc-700"
           >
-            Auth
+            Sign in
           </Link>
         </div>
       </div>

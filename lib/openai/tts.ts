@@ -20,7 +20,7 @@ export async function synthesizeSpeechMp3({
     model,
     voice,
     input: text,
-    format: "mp3",
+    format: "wav",
   });
 
   return await speech.arrayBuffer();

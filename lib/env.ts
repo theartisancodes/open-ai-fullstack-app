@@ -1,3 +1,4 @@
+// Values come from process.env, which Next.js fills from .env, .env.local, .env.development, etc. (.env.local overrides .env.)
 const optionalServerEnv = {
   EXTERNAL_API_BASE_URL:
     process.env.EXTERNAL_API_BASE_URL ?? "https://jsonplaceholder.typicode.com",
